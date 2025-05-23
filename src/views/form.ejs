@@ -4,26 +4,43 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Message Form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
-    <h1>Leave a Message</h1>
-    <form action="/new" method="post">
-      <label for="name"></label>
-      <input
-        type="text"
-        id="name"
-        name="user"
-        placeholder="Your Name"
-        required
-      />
-      <label for="message"></label>
-      <textarea
-        id="message"
-        name="text"
-        placeholder="Your Message"
-        required
-      ></textarea>
-      <button type="submit">Submit</button>
-    </form>
+    <div class="container">
+      <h1>📝 Leave a Message</h1>
+      <main>
+        <form action="/new" method="post">
+          <label for="name">Your Name</label>
+          <input
+            type="text"
+            id="name"
+            name="user"
+            placeholder="Enter your name..."
+            required
+          />
+
+          <label for="message">Your Message</label>
+          <textarea
+            id="message"
+            name="text"
+            placeholder="What's on your mind?"
+            required
+          ></textarea>
+
+          <button type="submit">🚀 Submit Message</button>
+        </form>
+
+        <div style="text-align: center; margin-top: 2rem">
+          <a href="/" class="back-link">← Back to Messages</a>
+        </div>
+      </main>
+    </div>
   </body>
 </html>

@@ -4,17 +4,32 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mini Message Board</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
-    <h1>Mini Message Board</h1>
-    <a href="/new">Add a New Message</a>
-    <ul>
-      <% messages.forEach((message, index) => { %>
-      <li>
-        <%= message.user %>: <%= message.text %> (<%= message.added %>)
-        <a href="/messages/<%= index %>">Open</a>
-      </li>
-      <% }) %>
-    </ul>
+    <div class="container">
+      <h1>Mini Message Board</h1>
+      <main>
+        <a href="/new" class="add-message-link">✨ Add a New Message</a>
+        <ul>
+          <% messages.forEach((message, index) => { %>
+          <li>
+            <div class="message-user"><%= message.user %></div>
+            <div class="message-text"><%= message.text %></div>
+            <div class="message-date"><%= message.added %></div>
+            <div class="message-actions">
+              <a href="/messages/<%= index %>">🔍 View Details</a>
+            </div>
+          </li>
+          <% }) %>
+        </ul>
+      </main>
+    </div>
   </body>
 </html>

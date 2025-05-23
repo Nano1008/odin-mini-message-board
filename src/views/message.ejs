@@ -4,11 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Message Detail</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
-    <h1>Message by <%= message.user %></h1>
-    <p>Message: <%= message.text %></p>
-    <p>Added on: <%= message.added %></p>
-    <a href="/">Back to messages</a>
+    <div class="container">
+      <main>
+        <div class="message-detail">
+          <h1>💬 Message by <%= message.user %></h1>
+
+          <div class="message-content">
+            <p><strong>Message:</strong></p>
+            <p class="message-text"><%= message.text %></p>
+            <p class="message-date">📅 Added on: <%= message.added %></p>
+          </div>
+
+          <a href="/" class="back-link">← Back to Messages</a>
+        </div>
+      </main>
+    </div>
   </body>
 </html>
