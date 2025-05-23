@@ -9,8 +9,11 @@
     <h1>Mini Message Board</h1>
     <a href="/new">Add a New Message</a>
     <ul>
-      <% messages.forEach(message => { %>
-      <li><%= message.user %>: <%= message.text %> (<%= message.added %>)</li>
+      <% messages.forEach((message, index) => { %>
+      <li>
+        <%= message.user %>: <%= message.text %> (<%= message.added %>)
+        <a href="/messages/<%= index %>">Open</a>
+      </li>
       <% }) %>
     </ul>
   </body>
