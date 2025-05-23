@@ -16,7 +16,19 @@ const messages = [
 
 // GET home page
 router.get("/", (req, res) => {
-  res.render("index", { title: "Mini Message Board", messages });
+  res.render("index", { messages });
+});
+
+// GET new message page
+router.get("/new", (req, res) => {
+  res.render("form");
+});
+
+// POST new message
+router.post("/new", (req, res) => {
+  const { user, text } = req.body;
+  messages.push({ user, text, added: new Date() });
+  res.redirect("/");
 });
 
 module.exports = router;
